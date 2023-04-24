@@ -1,0 +1,10 @@
+gcc [filenale] - create a.out file.
+gcc [filename] -o [dest file name] -  creates specified file name. the -o option means output
+--the include statement is preprpcessor directive (#include ...)
+gcc -Wall (warn all) to show all worning
+gcc -Wextra (extra warning) --you can include all option, from -Wall in one statement.
+gcc -Pedantic ( to catch all warnings that vialate strict ISO C starndad.
+gcc -E (to produce preprocessor output out file extention .i)
+gcc -c (produce only compiled code) --extention .o --
+gcc [filename] -o [dest filename] -lm (linking compiled code with a shared library)
+gcc [filename] --save-temps (procuce all compilation stages: preprocessed .i file, compiled .o file and ... .s file)
