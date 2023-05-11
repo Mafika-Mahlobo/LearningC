@@ -25,7 +25,8 @@ int main(){
 
 	char chaOne = 'k';
 	printf("Char: %c", chaOne);
-	printf(", stored as: %d\n", chaOne);	
+	printf(", stored as: %d", chaOne);
+	printf(", size: %zu\n", sizeof(chaOne));	
 		
 	return 0;
 }
