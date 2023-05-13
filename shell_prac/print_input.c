@@ -2,15 +2,16 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <string.h>
 
 /**
-* main - takes user inpout from input stream and print it
+* main - takes user inpout from input command and print it
 * Return: Always 0
 */
 
 int main(int argc, char **argv)
 {
-	char  *stream = NULL;
+	char  *command = NULL;
 
 	size_t len = 0;
 	
@@ -18,10 +19,15 @@ int main(int argc, char **argv)
 	while (1)
 	{
 		printf("$ ");
-		getline(&stream, &len, stdin);
-		printf("%s", stream);
+		getline(&command, &len, stdin);
+
+		if (strcmp(command, "exit\n") == 0)
+			break;
+
+		printf("%s", command);
+		
 	}
-	free(stream);
+	free(command);
 	return (0);
 
 }
