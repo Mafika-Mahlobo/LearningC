@@ -3,13 +3,14 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <string.h>
+#include "main.h"
 
 /**
 * main - takes user inpout from input command and print it
 * Return: Always 0
 */
 
-int main(int argc, char **argv)
+int main()
 {
 	char  *command = NULL;
 
@@ -19,7 +20,7 @@ int main(int argc, char **argv)
 	while (1)
 	{
 		printf("$ ");
-		getline(&command, &len, stdin);
+		my_getline(&command, &len, stdin);
 
 		if (strcmp(command, "exit\n") == 0)
 			break;
