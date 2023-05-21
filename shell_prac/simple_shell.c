@@ -54,7 +54,7 @@ int main()
 		}
 		else
 			wait(&status);
-			printf("Processing...");
+			printf("Retured with status code: %d\n", status);
 		
 	}
 
