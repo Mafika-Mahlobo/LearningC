@@ -6,22 +6,28 @@
 #include "main.h"
 
 /**
-* child_process - takes user command and runs in new process
-* @command: pointer to character (user cammnad)
+* child_process - takes user input and runs in new process
+* @input: pointer to character (user cammnad)
 * Return: No return value
 */
-void child_process(char *command)
+void child_process(char *input)
 {
 	pid_t child_pid;
 
-	char *argv[] = {NULL};
+	char *command = strtok(input, " ");
+	char *params = strtok(NULL, " ");
 
-	char *env[] = {NULL};
+	char *argv[3];
+	char **env = {NULL};
+
+	argv[0] = command;
+	argv[1] = params;
+	argv[2] = NULL;
 
 	child_pid = fork();
 	if (child_pid == 0)
 	{
-		if (execve(command, argv, env) == -1)
+		if (execve(input, argv, env) == -1)
 		{
 			perror("./shell");
 			exit(1);
