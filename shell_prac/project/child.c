@@ -5,7 +5,12 @@
 #include <string.h>
 #include "main.h"
 
-int child_process(char *command)
+/**
+* child_process - takes user command and runs in new process
+* @command: pointer to character (user cammnad)
+* Return: No return value
+*/
+void child_process(char *command)
 {
 	pid_t child_pid;
 
@@ -19,13 +24,11 @@ int child_process(char *command)
 		if (execve(command, argv, env) == -1)
 		{
 			perror("./shell");
-			return (1);
+			exit(1);
 		}
 	}
 	else
 	{
 		wait(NULL);
 	}
-
-	return (0);
 }
