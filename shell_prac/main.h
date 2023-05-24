@@ -3,4 +3,5 @@
 #define MAX_SIZE 100
 size_t my_getline(char **lineptr, size_t *n, FILE *stream);
 char **split(char *str);
+char *_getenv(const char *name);
 #endif

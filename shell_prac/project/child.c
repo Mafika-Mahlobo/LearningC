@@ -13,17 +13,14 @@
 void child_process(char *input)
 {
 	pid_t child_pid;
-
 	char *command = strtok(input, " ");
 	char *params = strtok(NULL, " ");
-
 	char *argv[3];
 	char **env = {NULL};
 
 	argv[0] = command;
 	argv[1] = params;
 	argv[2] = NULL;
-
 	child_pid = fork();
 	if (child_pid == 0)
 	{
