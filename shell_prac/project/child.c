@@ -16,7 +16,9 @@ void child_process(char *input)
 	char *command = strtok(input, " ");
 	char *params = strtok(NULL, " ");
 	char *argv[3];
-	char **env = {NULL};
+	char **env[2];
+
+	
 
 	argv[0] = command;
 	argv[1] = params;

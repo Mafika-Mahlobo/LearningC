@@ -1,0 +1,9 @@
+creating and working with dynamic library
+
+create .c files with dunction to add to library
+create the shared library file by compilitng the .c file(s) using gcc [gcc -shared -fPIC {.c file(s) -o {libraryname.so}]
+witer a main file to use with library
+	use dlopen to load the library [dlopne("./libname", RTLD_LAZY)]. you can use RTLD_NOW etc
+	define a pointer function to library function and assign it the function retrived from lib using dlsym [ (*func)(argemnts ...) = dlsym(void pointer object --from dlopen()--, "func")
+	use the function
+compile the mian .c file with gcc flah -ldl [gcc file.c -ldl -o output]
