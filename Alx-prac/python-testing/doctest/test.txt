@@ -1,0 +1,4 @@
+
+>>> from in_txtfile import add
+>>> add(1, 2)
+3
